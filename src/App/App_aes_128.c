@@ -1,7 +1,7 @@
 #include "App/App_aes_128.h"
 
-char c_queue_buffer[170], input_string[20][16]={0};
- uint8_t ui8_chuncks=0, ui8_ciphertext[20][16]={0}, ui8_decrypted[20][16]={0};
+char c_queue_buffer[200], input_string[13][16]={0};
+ uint8_t ui8_chuncks=0, ui8_ciphertext[13][16]={0}, ui8_decrypted[13][16]={0};
 
 xSm_Aes_128_e xSm_Aes_128 = SM_AES_128_SET_KEY;
 esp_aes_context aes;
@@ -13,7 +13,7 @@ const uint8_t ui8_key[16] = {
 
 void vApp_aes_128( void * pvParameters)
 {
-    QueueHandle_t xQueue_data_input;//Objeto da queue
+    QueueHandle_t xQueue_data_input;
     xQueue_data_input = (QueueHandle_t)pvParameters;
 
 
